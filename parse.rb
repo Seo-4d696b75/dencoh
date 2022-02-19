@@ -109,6 +109,25 @@ def parse_profile(no, str)
   attribute = m[:attr]
   raise RuntimeError.new("fail parse denco attr #{attribute} at #{no}") if !["eco", "heat", "cool", "flat"].include?(attribute)
   dst["attribute"] = attribute
+  m = table[3][0].match(/<td>でんこカラー<\/td>\s*<td>(<span.*?>)?(?<color>.+?)(<\/span>)?<\/td>/m)
+  case m[:color]
+  when "赤"
+    dst["color"] = "red"
+  when "黄"
+    dst["color"] = "yellow"
+  when "桃"
+    dst["color"] = "pink"
+  when "青"
+    dst["color"] = "blue"
+  when "緑"
+    dst["color"] = "green"
+  when "橙"
+    dst["color"] = "orange"
+  when "紫"
+    dst["color"] = "purple"
+  else
+    raise RuntimeError.new("fail to parse color #{m[:color]} at #{no}")
+  end
   dst
 end
 
