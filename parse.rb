@@ -221,6 +221,6 @@ File.open("list.csv", "r:utf-8") do |f|
   end
 end
 
-File.open("raw/base.json", "w:utf-8") { |f| f.write(format_list_json(base)) }
-File.open("raw/skill.json", "w:utf-8") { |f| f.write(format_list_json(skill)) }
-File.open("raw/film.json", "w:utf-8") { |f| f.write(format_list_json(film)) }
+File.open("src/base.json", "w:utf-8") { |f| f.write(format_list_json(base)) }
+File.open("src/skill.json", "w:utf-8") { |f| f.write(format_list_json(skill)) }
+File.open("src/film.json", "w:utf-8") { |f| f.write(format_list_json(film)) }
