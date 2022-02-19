@@ -1,0 +1,77 @@
+[
+  {"numbering":"No.00","class":"D00_Nozomi","list":[
+    {"level":1,"name":"目指せステーションマスター♪","ATK":50,"DEF":50,"active":1200,"wait":1800}
+  ]},
+  {"numbering":"No.1","class":"D01_Seria","list":[
+    {"level":1,"name":"検測開始しま～す♡ Lv.1","active":1800,"wait":10800,"heal":15,"probability":20},
+    {"level":2,"name":"検測開始しま～す♡ Lv.2","active":1800,"wait":10800,"heal":25,"probability":25},
+    {"level":3,"name":"検測開始しま～す♡ Lv.3","active":1800,"wait":10800,"heal":35,"probability":30},
+    {"level":4,"name":"検測開始しま～す♡ Lv.4","active":1800,"wait":10800,"heal":45,"probability":35},
+    {"level":5,"name":"検測開始しま～す♡ Lv.5","active":1800,"wait":10800,"heal":55,"probability":40},
+    {"level":6,"name":"検測開始しま～す♡ Lv.6","active":1800,"wait":10800,"heal":65,"probability":45},
+    {"level":7,"name":"幸せの黄色い検測","active":1800,"wait":10800,"heal":80,"probability":50}
+  ]},
+  {"numbering":"No.2","class":"D02_Mero","list":[
+    {"level":1, "name":"きゃのんぱんち Lv.1","probability":1.0},
+    {"level":2, "name":"きゃのんぱんち Lv.2","probability":1.2},
+    {"level":3, "name":"きゃのんぱんち Lv.3","probability":1.4},
+    {"level":4, "name":"きゃのんぱんち Lv.4","probability":1.6},
+    {"level":5, "name":"きゃのんぱんち Lv.5","probability":1.8},
+    {"level":6, "name":"きゃのんぱんち Lv.6","probability":2.0},
+    {"level":7, "name":"すーぱーぎがんとぱんち","probability":2.5}
+  ]},
+  {"numbering":"No.3","class":"D03_Luna","list":[
+    {"level":1,"name":"ナイトライダー Lv.1","DEF_night":5,"DEF_morning":-30},
+    {"level":2,"name":"ナイトライダー Lv.2","DEF_night":10,"DEF_morning":-30},
+    {"level":3,"name":"ナイトライダー Lv.3","DEF_night":15,"DEF_morning":-30},
+    {"level":4,"name":"ナイトライダー Lv.4","DEF_night":25,"DEF_morning":-30},
+    {"level":5,"name":"ナイトライダー Lv.5","DEF_night":35,"DEF_morning":-30},
+    {"level":6,"name":"ナイトライダー Lv.6","DEF_night":40,"DEF_morning":-30},
+    {"level":7,"name":"ナイトエクスプレス","DEF_night":50,"DEF_morning":-30}
+  ]},
+  {"numbering":"No.5","class":"D05_Reika","list":[
+    {"level":1,"name":"起動加速度向上 Lv.1","ATK":10,"active":900,"wait":5400},
+    {"level":2,"name":"起動加速度向上 Lv.2","ATK":15,"active":900,"wait":5400},
+    {"level":3,"name":"起動加速度向上 Lv.3","ATK":20,"active":900,"wait":5400},
+    {"level":4,"name":"起動加速度向上 Lv.4","ATK":25,"active":900,"wait":5400},
+    {"level":5,"name":"起動加速度向上 Lv.5","ATK":30,"active":900,"wait":5400},
+    {"level":6,"name":"起動加速度向上 Lv.6","ATK":35,"active":900,"wait":5400},
+    {"level":7,"name":"大起動加速度向上薬注入","ATK":45,"active":900,"wait":5400}
+  ]},
+  {"numbering":"No.7","class":"D07_Sheena","list":[
+    {"level":1,"name":"ディファーレ Lv.1","probability":2.0},
+    {"level":2,"name":"ディファーレ Lv.2","probability":3.5},
+    {"level":3,"name":"ディファーレ Lv.3","probability":5.0},
+    {"level":4,"name":"ディファーレ Lv.4","probability":6.5},
+    {"level":5,"name":"ディファーレ Lv.5","probability":8.0},
+    {"level":6,"name":"ディファーレ Lv.6","probability":9.5},
+    {"level":7,"name":"レッツトエントリヒ","probability":11.0}
+  ]},
+  {"numbering":"No.34","class":"D34_Hiiru","list":[
+    {"level":1,"name":"テンションAGEAGE↑↑ Lv.1","boost":8,"active":1800,"wait":5400},
+    {"level":2,"name":"テンションAGEAGE↑↑ Lv.2","boost":12,"active":1800,"wait":5400},
+    {"level":3,"name":"テンションAGEAGE↑↑ Lv.3","boost":16,"active":1800,"wait":5400},
+    {"level":4,"name":"テンションAGEAGE↑↑ Lv.4","boost":20,"active":3600,"wait":5400},
+    {"level":5,"name":"テンションAGEAGE↑↑ Lv.5","boost":24,"active":3600,"wait":5400},
+    {"level":6,"name":"テンションAGEAGE↑↑ Lv.6","boost":28,"active":3600,"wait":5400},
+    {"level":7,"name":"テンションAGEAGE↑↑ Lv.1","boost":32,"active":3600,"wait":5400}
+  ]},
+  {"numbering":"No.66","class":"D66_Minamo","list":[
+    {"level":1,"name":"みんなでショウ・タイム Lv.1","damage":30,"links":2,"active":1800,"wait":0},
+    {"level":2,"name":"みんなでショウ・タイム Lv.2","damage":45,"links":2,"active":1800,"wait":0},
+    {"level":3,"name":"みんなでショウ・タイム Lv.3","damage":60,"links":2,"active":1800,"wait":0},
+    {"level":4,"name":"みんなでショウ・タイム Lv.4","damage":75,"links":2,"active":1800,"wait":0},
+    {"level":5,"name":"みんなでショウ・タイム Lv.5","damage":90,"links":2,"active":1800,"wait":0},
+    {"level":6,"name":"みんなでショウ・タイム Lv.6","damage":105,"links":2,"active":1800,"wait":0},
+    {"level":7,"name":"ランウェイオンザレール","damage":120,"links":2,"active":1800,"wait":0}
+  ]},
+  {"numbering":"No.77","class":"D77_Reto","list":[
+    {"level":1,"name":"ワンダーエスケープ Lv.1","active":0,"wait":0,"probability":8},
+    {"level":2,"name":"ワンダーエスケープ Lv.2","active":0,"wait":0,"probability":10},
+    {"level":3,"name":"ワンダーエスケープ Lv.3","active":0,"wait":0,"probability":12},
+    {"level":4,"name":"ワンダーエスケープ Lv.4","active":0,"wait":0,"probability":14},
+    {"level":5,"name":"ワンダーエスケープ Lv.5","active":0,"wait":0,"probability":16},
+    {"level":6,"name":"ワンダーエスケープ Lv.6","active":0,"wait":0,"probability":18},
+    {"level":7,"name":"逃げ道だって小さな旅","active":0,"wait":0,"probability":20}
+  ]}
+]
