@@ -1,6 +1,6 @@
 require "net/http"
 
-File.open("list.csv", "r") do |file|
+File.open("src/url.csv", "r") do |file|
   file.each_line do |line|
     no, _, path = line.chomp.split(",")
     url = "https://ek1mem0.wiki.fc2.com#{path}"
