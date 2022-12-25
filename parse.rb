@@ -82,14 +82,13 @@ end
 
 def parse_profile(no, str)
   dst = { "numbering" => no }
-  m = str.match(/<h2.+?>プロフィール<\/h2>\s*<div><span.*?><span.*?>No.(?<no>[0-9]+)[\s　]+(?<full_name>\S+)\s*<\/span><\/span><\/div>\s*<div>\s*<table.*?>(?<table>.+?)<\/table>\s*<\/div>/m)
-  raise RuntimeError.new("no mismatched #{no}") if no.to_i != m[:no].to_i
+  m = str.match(/<h2.+?>プロフィール<\/h2>\s*<div><span.*?><span.*?>.*?No.(?<no>[0-9]+)[\s　]+(?<full_name>\S+)\s*<\/span><\/span><\/div>\s*<div>\s*<table.*?>(?<table>.+?)<\/table>\s*<\/div>/m)
+  raise RuntimeError.new("no mismatched #{no}") if !no.include?(m[:no].to_i.to_s)
   full_name = m[:full_name]
   table = m[:table].scan(/<tr>(.+?)<\/tr>/m)
   raise RuntimeError.new("profile table cnt != 5 #{no}") if table.length != 5
-  m = table[0][0].match(/image\/(.+?)".*?alt="(.+?)"/)
-  raise RuntimeError.new("cannot determin name #{no}") if m[1] != m[2]
-  name = m[1]
+  m = table[0][0].match(/<img.*?alt="(.+?)"/)
+  name = m[1].downcase
   dst["name"] = name
   dst["full_name"] = full_name
   m = table[1][0].match(/<td>タイプ<\/td>\s*<td>(?<type>.+?)<\/td>/)
@@ -212,15 +211,15 @@ end
 base = []
 skill = []
 film = []
-File.open("list.csv", "r:utf-8") do |f|
+File.open("src/url.csv", "r:utf-8") do |f|
   f.each_line do |line|
     no = line.chomp.split(",")[0]
-    path = "raw/html/#{no}.html"
+    path = "src/html/#{no}.html"
     parse(no, path, base, skill, film)
     puts "no:#{no} file:#{path}"
   end
 end
 
-File.open("src/base.json", "w:utf-8") { |f| f.write(format_list_json(base)) }
-File.open("src/skill.json", "w:utf-8") { |f| f.write(format_list_json(skill)) }
-File.open("src/film.json", "w:utf-8") { |f| f.write(format_list_json(film)) }
+File.open("dst/base.json", "w:utf-8") { |f| f.write(format_list_json(base)) }
+File.open("dst/skill.json", "w:utf-8") { |f| f.write(format_list_json(skill)) }
+File.open("dst/film.json", "w:utf-8") { |f| f.write(format_list_json(film)) }
