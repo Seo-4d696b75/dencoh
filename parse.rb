@@ -91,6 +91,11 @@ def parse_profile(no, str)
   name = m[1].downcase
   dst["name"] = name
   dst["full_name"] = full_name
+  if m = full_name.match(/^(?<first>[\p{Katakana}ー]+)[＝・]/)
+    dst["first_name"] = m[:first]
+  elsif m = full_name.match(/(?<first>[\p{Hiragana}\p{Katakana}]+)$/) 
+    dst["first_name"] = m[:first]
+  end
   m = table[1][0].match(/<td>タイプ<\/td>\s*<td>(?<type>.+?)<\/td>/)
   case m[:type]
   when "アタッカー"
@@ -135,14 +140,14 @@ def parse(no, path, bases, skills, films)
   base = parse_profile(no, str)
   name = base["name"]
   bases << base
-  m = str.match(/セリフ<\/h2>(.+?)<h(2|3).+?>/m)
-  m[1].scan(/<div.*?><p.*?><span.*?>(.+?)<\/span><\/p>.+?<table.*?>(.+?)<\/table>/m).each do |e|
-    title, table = e
-    parse_words(no, name, title, table, base, films)
-  end
-  if !base.key?("login_words")
-    raise RuntimeError.new("no putsin in words at #{base["name"]} file:#{path}")
-  end
+  # m = str.match(/セリフ<\/h2>(.+?)<h(2|3).+?>/m)
+  # m[1].scan(/<div.*?><p.*?><span.*?>(.+?)<\/span><\/p>.+?<table.*?>(.+?)<\/table>/m).each do |e|
+  #   title, table = e
+  #   parse_words(no, name, title, table, base, films)
+  # end
+  # if !base.key?("login_words")
+  #   raise RuntimeError.new("no putsin in words at #{base["name"]} file:#{path}")
+  # end
   m = str.match(/ステータス詳細<\/h2>(.+?)(マイレージ最終値|h2|h3)/m)
   has_unknown = false
   list = m[1].scan(/<tr>(.+?)<\/tr>/m).map.with_index do |e, i|
@@ -169,7 +174,7 @@ def parse(no, path, bases, skills, films)
     ap << e[2]
     hp << e[3]
   end
-  base["EXP"] = exp
+  # base["EXP"] = exp
   base["AP"] = ap
   base["HP"] = hp
 
@@ -222,4 +227,4 @@ end
 
 File.open("dst/base.json", "w:utf-8") { |f| f.write(format_list_json(base)) }
 File.open("dst/skill.json", "w:utf-8") { |f| f.write(format_list_json(skill)) }
-File.open("dst/film.json", "w:utf-8") { |f| f.write(format_list_json(film)) }
+# File.open("dst/film.json", "w:utf-8") { |f| f.write(format_list_json(film)) }
