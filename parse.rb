@@ -93,7 +93,7 @@ def parse_profile(no, str)
   dst["full_name"] = full_name
   if m = full_name.match(/^(?<first>[\p{Katakana}ー]+)[＝・]/)
     dst["first_name"] = m[:first]
-  elsif m = full_name.match(/(?<first>[\p{Hiragana}\p{Katakana}]+)$/) 
+  elsif m = full_name.match(/(?<first>[\p{Hiragana}\p{Katakana}ー]+)$/) 
     dst["first_name"] = m[:first]
   end
   m = table[1][0].match(/<td>タイプ<\/td>\s*<td>(?<type>.+?)<\/td>/)
