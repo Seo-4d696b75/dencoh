@@ -91,7 +91,7 @@ def parse_profile(no, str)
   name = m[1].downcase
   dst["name"] = name
   dst["full_name"] = full_name
-  if m = full_name.match(/^(?<first>[\p{Katakana}ー]+)[＝・]/)
+  if m = full_name.match(/^(?<first>[\p{Katakana}ー]+)[=＝・]/)
     dst["first_name"] = m[:first]
   elsif m = full_name.match(/(?<first>[\p{Hiragana}\p{Katakana}ー]+)$/) 
     dst["first_name"] = m[:first]
