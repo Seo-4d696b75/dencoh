@@ -107,7 +107,7 @@ def parse_profile(no, str)
   m = table[2][0].match(/<td>属性<\/td>\s*<td>(<span.*?>)?(?<attr>.+?)(<\/span>)?<\/td>/m)
   attribute = m[:attr]
   raise RuntimeError.new("fail parse denco attr #{attribute} at #{no}") if !["eco", "heat", "cool", "flat"].include?(attribute)
-  dst["attribute"] = attribute
+  dst["attr"] = attribute
   m = table[3][0].match(/<td>でんこカラー<\/td>\s*<td>(<span.*?>)?(?<color>.+?)(<\/span>)?<\/td>/m)
   case m[:color]
   when "赤"
